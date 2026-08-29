@@ -1,22 +1,22 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: service-B
+  name: service-b
   namespace: dev 
 spec:
  replicas: 1 
  selector:
-   matchLabel:
+   matchLabels:
       project: prometheus
       tier: Monitoring
  template:
    metadata:
-     label:
+     labels:
         project: prometheus
         tier: Monitoring
    spec:
-    container: 
-    - name: app-service-B
+    containers: 
+    - name: app-service-a
       image: srinunaik208/service-b:v1 
       imagePullPolicy: Always
       ports:
@@ -29,14 +29,14 @@ spec:
 
 ---
 apiVersion: v1 
-kind: service
+kind: Service
 metadata:
-  name: service-B
+  name: service-a
   namespace: dev 
 spec:
  selector:
    project: prometheus
-   component: Monitoring
+   tier: Monitoring
  ports:
  - protocol: TCP 
    port: 80
