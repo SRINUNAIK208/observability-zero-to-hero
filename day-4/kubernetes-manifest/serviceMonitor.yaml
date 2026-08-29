@@ -7,7 +7,7 @@ spec:
  selector:
    matchLabels:
      project: prometheus
-     component: Monitoring
+     tier: Monitoring
  namespaceSelector:
   matchNames:
   - dev
