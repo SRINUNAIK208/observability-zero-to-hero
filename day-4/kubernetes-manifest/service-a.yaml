@@ -11,11 +11,11 @@ spec:
       tier: Monitoring
  template:
    metadata:
-     label:
+     labels:
         project: prometheus
         tier: Monitoring
    spec:
-    container: 
+    containers: 
     - name: app-service-1
       image: srinunaik208/service-a:v1 
       imagePullPolicy: Always
