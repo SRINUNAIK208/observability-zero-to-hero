@@ -3,6 +3,9 @@ kind: ServiceMonitor
 metadata:
  name: service-a-servicemonitor
  namespace: monitoring 
+ labels:
+   release: monitoring
+
 spec:
  selector:
    matchLabels:
